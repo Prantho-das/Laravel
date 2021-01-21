@@ -559,10 +559,18 @@
             </div>
         </div>
     </div>
+        <script>
+            (function (window, document) {
+                var loader = function () {
+                    var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+                    script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
+                    tag.parentNode.insertBefore(script, tag);
+                };
+        
+                window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+            })(window, document);
+        </script>
     @livewireScripts
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-    </script> --}}
 </body>
 
 </html>
