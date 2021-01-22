@@ -32,7 +32,7 @@
         <h1>Laravel 8 - Stripe Payment Gateway Integration Example</h1>
         <div>
             <form action='{{route('stripe.post')}}' method="POST">
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_pIaGoPD69OsOWmh1FIE8Hl4J"
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{env("STRIPE_KEY")}}"
                     data-amount="2000" data-name="Stripe Demo" data-description="Online course about integrating Stripe"
                     data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto" data-currency="usd">
                 </script>
