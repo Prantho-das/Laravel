@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SslCommerzPaymentController;
+use App\Http\Controllers\StripeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,3 +34,8 @@ Route::post('/cancel', [SslCommerzPaymentController::class,'cancel']);
 
 Route::post('/ipn', [SslCommerzPaymentController::class,'ipn']);
 //SSLCOMMERZ END
+
+//stripe
+Route::get('stripe', [StripeController::class, 'stripe']);
+Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
+//stripe
