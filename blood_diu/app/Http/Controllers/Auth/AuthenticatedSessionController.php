@@ -61,14 +61,14 @@ class AuthenticatedSessionController extends Controller
     public function info(Request $request){
         $request->validate([
             'blood_group'=>'required|in:A+,A-,B+,B-,O+,O-,AB+,AB-',
-            'phone'=>'required|digit:11',
+            'phone'=>'required|digits:11',
             'address'=>'required'
         ]);
 
         $user=User::where('id',auth()->id())->firstOrFail();
         $user->blood_group=$request->blood_group;
         $user->address=$request->address;
-        $user->phone=$request->phone;
+        $user->phone_no=$request->phone;
         $user->save();
 
        $request->session()->flash('success',"Update Done");

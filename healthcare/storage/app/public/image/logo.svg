@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="145" height="27.232" viewBox="0 0 130.046 27.232">
+            <g id="Group_3" data-name="Group 3" transform="translate(-576.969 -206)">
+                <g id="Group_2" data-name="Group 2" transform="translate(576.969 206)">
+                    <path id="Path_1" data-name="Path 1"
+                        d="M5.88,0a5.88,5.88,0,0,1,5.88,5.88V25.358H2.573A2.573,2.573,0,0,1,0,22.786V5.88A5.88,5.88,0,0,1,5.88,0Z"
+                        transform="translate(0 9.051) rotate(-45)" fill="#6270dd" />
+                    <path id="Path_2" data-name="Path 2"
+                        d="M5.88,0a5.88,5.88,0,0,1,5.88,5.88v6.983H0V5.88A5.88,5.88,0,0,1,5.88,0Z"
+                        transform="translate(28.589 0) rotate(45)" fill="#fb5180" />
+                </g>
+                <text id="medicare" transform="translate(614.015 226.232)" fill="#4d4d4d" font-size="19"
+                    font-family="Poppins-Regular, Poppins">
+                    <tspan x="0" y="0">medi</tspan>
+                    <tspan y="0" fill="#6270dd" font-family="Poppins-SemiBold, Poppins" font-weight="600">care</tspan>
+                </text>
+            </g>
+        </svg>
