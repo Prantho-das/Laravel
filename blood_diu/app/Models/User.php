@@ -47,4 +47,7 @@ class User extends Authenticatable
     public function relBlood(){
         return $this->hasMany(blood_donate::class)->orderBy('last_donate','desc');
     }
+    public function image(){
+        return $this->morphMany(AllImages::class, 'imageable');
+    }
 }

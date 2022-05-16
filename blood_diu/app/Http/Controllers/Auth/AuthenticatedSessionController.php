@@ -58,21 +58,23 @@ class AuthenticatedSessionController extends Controller
         return redirect('/');
     }
 
-    public function info(Request $request){
+    public function info(Request $request)
+    {
         $request->validate([
-            'blood_group'=>'required|in:A+,A-,B+,B-,O+,O-,AB+,AB-',
-            'phone'=>'required|digits:11',
-            'address'=>'required'
+            'blood_group' => 'required|in:A+,A-,B+,B-,O+,O-,AB+,AB-',
+            'phone' => 'required|digits:11',
+            'address' => 'required',
+            'vaccine' => 'required|boolean|in:0,1'
         ]);
-
-        $user=User::where('id',auth()->id())->firstOrFail();
-        $user->blood_group=$request->blood_group;
-        $user->address=$request->address;
-        $user->phone_no=$request->phone;
+        $user = User::where('id', auth()->id())->firstOrFail();
+        $user->blood_group = $request->blood_group;
+        $user->address = $request->address;
+        $user->phone_no = $request->phone;
+        $user->vaccinated_status = $request->vaccine;
         $user->save();
 
-       $request->session()->flash('success',"Update Done");
-        return back();
+        $request->session('success', "Update Done");
 
+        return back();
     }
 }

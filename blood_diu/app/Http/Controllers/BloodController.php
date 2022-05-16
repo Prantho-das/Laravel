@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AllImages;
 use App\Models\blood_donate;
 use App\Models\DonateRequest;
 use App\Models\User;
@@ -27,7 +28,7 @@ class BloodController extends Controller
             ->latest()
             ->paginate();
         $myrequest = DonateRequest::where('user_id', auth()->user()->id)->paginate(7);
-        return inertia("Blood/BloodRequest", ['brequests' => $brequests,'myrequest'=>$myrequest]);
+        return inertia("Blood/BloodRequest", ['brequests' => $brequests, 'myrequest' => $myrequest]);
     }
 
     public function requestPost(Request $req)
@@ -47,11 +48,29 @@ class BloodController extends Controller
             'description' => $req->description,
         ]);
 
-        $users=User::whereNot('id', auth()->user()->id)
+        $users = User::whereNot('id', auth()->user()->id)
             ->where('blood_status', 1)
             ->where('blood_group', $req->want_blood)->get();
         //dd($users);
         Notification::send($users, new UserBloodNeed());
         return back()->with('success', 'Request Successfully Sent');
+    }
+    public function image(Request $req)
+    {
+        $req->validate([
+            'gallery_image' => 'required|image|mimes:jpeg,png,jpg|max:1048',
+        ]);
+        $imageName = time() . '.' . $req->file('gallery_image')->extension();
+        $req->file('gallery_image')->move(public_path('images'), $imageName);
+        auth()->user()->image()->create([
+            'user_id' => auth()->id(),
+            'image_link' => $imageName
+        ]);
+        return back()->with('success', 'Image Successfully Uploaded');
+    }
+    public function gallery(Request $req)
+    {
+        $data=AllImages::where('user_id',auth()->id())->get();
+        return response($data);
     }
 }

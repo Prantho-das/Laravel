@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('address')->nullable();
             $table->tinyInteger('blood_status')->nullable();
             $table->timestamp('last_donate')->nullable();
+            $table->boolean('vaccinated_status')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

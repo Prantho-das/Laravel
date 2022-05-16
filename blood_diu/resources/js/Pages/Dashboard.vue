@@ -7,14 +7,14 @@
         </template>
 
         <div class="grid grid-cols-12 gap-2">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200 md:col-span-4 text-center">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200 md:col-span-4 sm:col-span-6 col-span-12 text-center">
                 <h3>You're logged in!</h3>
             </div>
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200 md:col-span-4 text-center">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200 md:col-span-4 sm:col-span-6 col-span-12 text-center">
                 <h3>Total User</h3>
                 <p>{{ totalUser }}</p>
             </div>
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200 md:col-span-4 text-center">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200 md:col-span-4 sm:col-span-6 col-span-12 text-center">
                 <h3>Total Donor</h3>
                 <p>{{ totalDonor }}</p>
             </div>

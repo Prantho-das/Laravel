@@ -89,7 +89,7 @@ export default {
         _method: 'put',
         name: this.$page.props.auth.user.name,
         email: this.$page.props.auth.user.email,
-          phone: this.$page.props.auth.user.phone,
+        phone: this.$page.props.auth.user.phone_no,
         password: null,
         password_confirmation: null,
 
